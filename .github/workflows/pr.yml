@@ -33,6 +33,3 @@ jobs:
         uses: actions/checkout@master
       - name: Build
         run: ./.github/workflows/build-firebase.sh
-
-
-        command
