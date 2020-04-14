@@ -36,6 +36,7 @@
     "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
     "start": "npm run build:style && react-scripts start",
     "build": "npm run build:style && react-scripts build",
+    "test": "yarn test-mobile && yarn test-desktop",
     "test-mobile": "cypress run",
     "test-desktop":"cypress run --config viewportWidth=1280,viewportHeight=800",
     "eject": "react-scripts eject",
