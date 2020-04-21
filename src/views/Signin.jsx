@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Sentry from '@sentry/browser';
 import { useTranslation } from 'react-i18next';
 import 'firebase/auth';
 import {
@@ -45,7 +44,6 @@ export default function Signin() {
 
       if (!signInResult.user) {
         setError(t('views.signIn.unknownError'));
-        Sentry.captureException(new Error('signInWithEmailAndPassword returned a result where the user property is null'));
         return;
       }
 

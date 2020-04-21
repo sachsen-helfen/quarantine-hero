@@ -123,3 +123,7 @@
     background: #b6223e;
     position: absolute;
 }
+
+.max-logo{
+    max-width: 250px;
+}

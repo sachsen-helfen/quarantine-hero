@@ -9,7 +9,6 @@ import {
   Link,
 } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import * as Sentry from '@sentry/browser';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -33,7 +32,7 @@ import VerifyEmail from './views/VerifyEmail';
 import CompleteOfferHelp from './views/CompleteOfferHelp';
 import NotifyMe from './views/NotifyMe';
 import ScrollToTop from './components/ScrollToTop';
-import ShareButtons from './components/ShareButtons';
+// import ShareButtons from './components/ShareButtons';
 import Press from './views/Press';
 import createEventListener from './util/createEventListener';
 import Security from './views/Security';
@@ -54,7 +53,7 @@ function TopNavigation({ isAuthLoading, user, signOut }) {
           {t('App.login')}
         </Link>
         <Link className="mr-6 font-open-sans text-gray-700" to="/press">{t('App.press')}</Link>
-        <ShareButtons />
+        {/*<ShareButtons />*/}
       </div>
     );
   }
@@ -84,7 +83,7 @@ function TopNavigation({ isAuthLoading, user, signOut }) {
       >
         {t('App.press')}
       </Link>
-      <ShareButtons />
+      {/*<ShareButtons />*/}
     </div>
   );
 }
@@ -95,11 +94,6 @@ export default function App() {
   const signOut = () => firebase.auth().signOut();
 
   const enableAnalytics = () => {
-    // Crash reporting
-    Sentry.init({
-      dsn: process.env.REACT_APP_SENTRY_DSN,
-      environment: process.env.REACT_APP_ENV,
-    });
 
     // Firebase analytics
     fb.analytics = fb.app.analytics();
@@ -136,7 +130,7 @@ export default function App() {
               <div className="md:px-16 overflow-hidden">
                 <div style={{ zIndex: 101 }} className="visible md:invisible h-16 w-full fixed top-0 bg-white flex flex-row justify-between w-full items-center pr-5">
                   <Link to="/" className="font-main ml-4" style={{ fontWeight: '600' }}>
-                    <img alt="logo" src={require('./assets/logo_invert.svg')} className="h-10" />
+                    <img alt="logo" src={require('./assets/logo.png')} className="h-10" />
                   </Link>
                   <div>
                     <MenuIcon style={{ fontSize: '40px' }} className="text-gray-600" onClick={() => setMenuOpen(true)} />

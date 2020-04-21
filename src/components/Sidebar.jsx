@@ -3,7 +3,7 @@ import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import Drawer from '@material-ui/core/Drawer';
 import { useTranslation } from 'react-i18next';
-import ShareButtons from './ShareButtons';
+// import ShareButtons from './ShareButtons';
 
 export default function Sidebar(props) {
   const { t } = useTranslation();
@@ -59,9 +59,9 @@ export default function Sidebar(props) {
         ? <MenuItem to="/" onClick={menuProps.signOut}>{t('components.sidebar.signOut')}</MenuItem>
         : <MenuItem to="/signin/dashboard">{t('components.sidebar.login')}</MenuItem>}
 
-      <div className="mt-4">
-        <ShareButtons />
-      </div>
+      {/*<div className="mt-4">*/}
+      {/*  <ShareButtons />*/}
+      {/*</div>*/}
     </ul>
   );
 

@@ -37,7 +37,7 @@ export default function Main() {
     <div className="flex items-center flex-col">
       <div className="phone-width">
         <div className="font-main flex md:hidden text-white ">
-          <img className="logo-margin" src={(require('../assets/logo.svg'))} alt="logo" />
+          {/*<img className="logo-margin" src={(require('../assets/logo.png'))} alt="logo" />*/}
         </div>
         <div className="flex text-center font-teaser justify-center w-full my-8 md:my-10">
           {t('views.main.weAreHumans')}

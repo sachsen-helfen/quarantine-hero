@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GeoFirestore } from 'geofirestore';
 import { useTranslation } from 'react-i18next';
-import * as Sentry from '@sentry/browser';
 import fb from '../firebase';
 import NotifyMe from './NotifyMe';
 import Entry from './entry/Entry';
@@ -65,7 +64,6 @@ export default function EntryList({ pageSize = 0 }) {
         });
       } catch (error) {
         // Fallback
-        Sentry.captureException(error);
         return buildQuery();
       }
     } else {

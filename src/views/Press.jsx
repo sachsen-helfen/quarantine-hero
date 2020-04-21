@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import * as Sentry from '@sentry/browser';
 import * as firebase from 'firebase/app';
 import Footer from '../components/Footer';
 import 'firebase/storage';
@@ -23,7 +22,6 @@ export default function Press() {
   const [presseLink, errorGeneratingPressLink] = useFirebaseDownload('gs://quarantine-hero-assets/MarketingKit.zip', firebase);
 
   if (errorGeneratingPressLink) {
-    Sentry.captureException(errorGeneratingPressLink);
   }
 
   const Article = (props) => (
