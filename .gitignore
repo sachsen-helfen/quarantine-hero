@@ -80,3 +80,5 @@ fabric.properties
 cypress/videos/*
 cypress/screenshots/*
 
+.env
+.env.development
